@@ -8,6 +8,12 @@ public class WordGameTest {
     public void replaceWord_returnsOriginalString_originalstring() throws Exception {
         WordGame testWordGame = new WordGame();
         String expected = "drink more coffee";
-        assertEquals(expected, testWordGame.replaceWord("drink more coffee"));
+        assertEquals(expected, testWordGame.replaceWord("drink more coffee", "", ""));
+    }
+    @Test
+    public void replaceWord_returnsStringWithNewWords_editedstring() throws Exception {
+        WordGame testWordGame = new WordGame();
+        String expected = "drink less coffee";
+        assertEquals(expected, testWordGame.replaceWord("drink more coffee", "more","less"));
     }
 }
